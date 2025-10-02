@@ -77,6 +77,52 @@ export default function App() {
           </div>
         </section>
 
+        <section className="about-section" id="about">
+          <div className="container">
+            <h2 className="section-heading">About StyleJarvis</h2>
+            <p className="section-lead">We help you look fire every day — low effort, max impact. Meet your wardrobe's new BFF.</p>
+
+            <div className="genz-grid">
+              <article className="genz-card">
+                <div className="genz-emoji">📸</div>
+                <h3 className="genz-title">Virtual Closet — IRL ➜ Digital</h3>
+                <p className="genz-desc">Snap fits or upload pics. Auto‑tagging (color, fabric, vibe). See your whole wardrobe in one swipe — never double‑buy again.</p>
+              </article>
+
+              <article className="genz-card">
+                <div className="genz-emoji">✨</div>
+                <h3 className="genz-title">Daily Fits, Curated</h3>
+                <p className="genz-desc">Every AM we check your calendar + weather and drop 3–5 outfit combos using only your stuff. Fast, cute, and appropriate.</p>
+              </article>
+
+              <article className="genz-card">
+                <div className="genz-emoji">🛍️</div>
+                <h3 className="genz-title">Smart Shopping — No FOMO</h3>
+                <p className="genz-desc">We analyze gaps and suggest 1–3 pieces that unlock the most fits — filtered by vibe and budget. Buy less, wear more.</p>
+              </article>
+
+              <article className="genz-card">
+                <div className="genz-emoji">🎨</div>
+                <h3 className="genz-title">Color & Fit, Optimized</h3>
+                <p className="genz-desc">We match colors that pop on you and silhouettes that flex your features. Science + style = glow up.</p>
+              </article>
+
+              <article className="genz-card">
+                <div className="genz-emoji">🧳</div>
+                <h3 className="genz-title">Trip & Event Planner</h3>
+                <p className="genz-desc">Input dates/destinations, and we pre‑pack outfit plans that match weather and dress code. Travel light, slay heavier.</p>
+              </article>
+
+              <article className="genz-card">
+                <div className="genz-emoji">💬</div>
+                <h3 className="genz-title">Feedback That Actually Learns</h3>
+                <p className="genz-desc">Love it / Like it / Nah — rate fits and the AI levels up. The more you use it, the more it vibes with you.</p>
+              </article>
+            </div>
+
+          </div>
+        </section>
+
         <section className="features-grid" id="features">
           <div className="polaroid-wrap" aria-hidden>
             <div className="polaroid abstract">
