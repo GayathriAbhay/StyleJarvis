@@ -204,13 +204,9 @@ export default function App() {
         <section className="products-section" id="collection">
           <div className="container">
             <h2 className="section-heading">Latest Trends</h2>
-            <p className="section-lead">A selection of timeless pieces curated to work together — elevated neutrals and considered silhouettes.</p>
+            <p className="section-lead">Live, trending fashion pulled from your Pinterest when connected. Connect to see a real-time feed of pins tailored to current trends.</p>
 
-            <div className="product-grid" role="list">
-              {SAMPLE_PRODUCTS.map((p, i) => (
-                <ProductCard key={p.id} product={p} index={i} />
-              ))}
-            </div>
+            <PinterestTrends />
           </div>
         </section>
 
