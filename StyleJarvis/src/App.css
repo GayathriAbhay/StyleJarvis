@@ -21,10 +21,16 @@
 
 /* Hero visual - abstract poster inspired by fashion posters */
 .hero-visual { position: absolute; right: 2rem; top: 0; bottom: 0; width: 48%; display: flex; align-items: center; justify-content: center; pointer-events: none; z-index: 1; }
-.hero-poster { width: 420px; height: 560px; position: relative; border-radius: 14px; overflow: hidden; box-shadow: 0 40px 90px rgba(12,12,12,0.45); transform: rotate(-6deg); }
-.poster-shape { position: absolute; inset: 0; background: linear-gradient(180deg, #b21b12 0%, #8b0f0f 60%); clip-path: polygon(0 0, 100% 0, 100% 72%, 0 100%); }
-.poster-text { position: absolute; left: 18px; bottom: 36px; color: #fff; font-weight: 900; font-size: 4.2rem; line-height: 0.85; letter-spacing: -0.02em; text-transform: uppercase; }
-.poster-text br { display: inline; }
+.hero-poster { width: 480px; height: 640px; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 50px 120px rgba(12,12,12,0.55); transform: rotate(-8deg); }
+.hero-poster-img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(1.05) contrast(1.05) brightness(0.95); transform-origin: 60% 40%; }
+.poster-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(178,27,18,0.18) 0%, rgba(0,0,0,0.28) 80%); mix-blend-mode: multiply; pointer-events: none; }
+.poster-text.poster-large { position: absolute; right: -30px; top: 28px; color: var(--accent-cream); font-weight: 900; font-size: 7.5rem; line-height: 0.8; letter-spacing: -0.03em; text-transform: uppercase; transform: rotate(-18deg); text-shadow: 0 12px 30px rgba(0,0,0,0.45); }
+.poster-text.poster-large .poster-accent { display: inline-block; margin-left: 8px; color: rgba(255,255,255,0.95); background: linear-gradient(90deg, rgba(0,0,0,0.18), rgba(0,0,0,0)); padding: 0 6px; }
+
+@media (max-width: 900px) {
+  .hero-poster { width: 320px; height: 420px; transform: rotate(-4deg); }
+  .poster-text.poster-large { font-size: 4.4rem; right: -12px; top: 18px; }
+}
 
 .coming-badge { display: none; }
 

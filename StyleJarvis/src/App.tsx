@@ -1,5 +1,7 @@
 import './App.css'
 
+const HERO_IMG = "https://cdn.builder.io/api/v1/image/assets%2F233794be9a494c9b94dca09bc8bcba1f%2Fa617e92294834adcb78fb3430473511e?format=webp&width=1200"
+
 function Feature({ title, subtitle, details }: { title: string; subtitle: string; details: string }) {
   return (
     <section className="feature-card" aria-labelledby={title.replace(/\s+/g, '-').toLowerCase()}>
@@ -34,9 +36,12 @@ export default function App() {
           </div>
 
           <div className="hero-visual" aria-hidden>
-            <div className="hero-poster">
-              <div className="poster-shape" />
-              <div className="poster-text">GRAND<br/>OPENING</div>
+            <div className="hero-poster poster-with-image">
+              <img className="hero-poster-img" src={HERO_IMG} alt="Editorial fashion poster" />
+              <div className="poster-text poster-large">STYLE
+                <span className="poster-accent">JARVIS</span>
+              </div>
+              <div className="poster-overlay" />
             </div>
           </div>
         </section>
