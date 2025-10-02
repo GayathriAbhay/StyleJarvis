@@ -11,19 +11,31 @@
 .primary-nav { display: flex; gap: 1rem; }
 .nav-link { color: #646cff; }
 
-.hero-section { padding: 4rem 1.25rem 3rem; }
-.hero-content { max-width: 960px; margin: 0 auto; }
-.hero-title { font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 0.5rem; }
-.hero-tagline { font-size: 1.125rem; opacity: 0.86; margin: 0 0 1.25rem; }
+.hero-section { padding: 4rem 1.25rem 3rem; position: relative; overflow: visible; }
+.hero-content { max-width: 960px; margin: 0 auto; position: relative; z-index: 5; }
+.hero-title { font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 0.5rem; color: #111; }
+.hero-tagline { font-size: 1.125rem; opacity: 0.95; margin: 0 0 1.25rem; color: #333; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-.cta-primary { background: #1a1a1a; color: #ffffff; border-radius: 999px; padding: 0.8rem 1.2rem; border: 1px solid transparent; }
-.cta-secondary { background: transparent; color: currentColor; border-radius: 999px; padding: 0.8rem 1.2rem; border: 1px solid #646cff; }
+.cta-primary { background: #111; color: #fff; border-radius: 999px; padding: 0.8rem 1.2rem; border: 1px solid transparent; box-shadow: 0 6px 18px rgba(17,17,17,0.18); }
+.cta-secondary { background: transparent; color: #111; border-radius: 999px; padding: 0.8rem 1.2rem; border: 1px solid #646cff; }
 
-.features-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); padding: 1.25rem; max-width: 1200px; margin: 0 auto; }
-.feature-card { padding: 1.25rem; border: 1px solid rgba(100,108,255,0.18); border-radius: 14px; background: rgba(0,0,0,0.02); }
+/* Hero visual */
+.hero-visual { position: absolute; right: 2rem; top: 0; bottom: 0; width: 48%; display: flex; align-items: center; justify-content: center; pointer-events: none; z-index: 1; }
+.hero-image { width: 100%; max-width: 520px; border-radius: 20px; transform: translateY(6%); filter: contrast(1.02) saturate(1.05); box-shadow: 0 30px 80px rgba(16,16,16,0.35); }
+.hero-overlay { position: absolute; right: 2rem; top: 0; width: 48%; height: 100%; background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 60%); pointer-events: none; z-index: 2; mix-blend-mode: lighten; }
+.coming-badge { position: absolute; right: 3rem; bottom: 2.25rem; background: rgba(255,255,255,0.92); color: #b21b12; font-weight: 900; padding: 0.6rem 1rem; border-radius: 10px; transform: rotate(-2deg); box-shadow: 0 10px 30px rgba(0,0,0,0.15); z-index: 6; pointer-events: none; }
+
+/* Polaroid */
+.polaroid-wrap { display: flex; align-items: start; justify-content: center; }
+.polaroid { width: 220px; margin: 0 1rem 1rem 0; background: #fff; padding: 12px; border-radius: 6px; box-shadow: 0 18px 40px rgba(0,0,0,0.15); transform: rotate(-2deg); }
+.polaroid img { width: 100%; display: block; border-radius: 4px; }
+.polaroid-tape { width: 60px; height: 14px; background: linear-gradient(90deg,#eee 0%, #ddd 100%); transform: translateY(-10px) rotate(-6deg); margin: -12px auto 6px; border-radius: 2px; }
+
+.features-grid { display: grid; gap: 1rem; grid-template-columns: 220px repeat(auto-fit, minmax(260px, 1fr)); align-items: start; padding: 1.25rem; max-width: 1200px; margin: 0 auto; }
+.feature-card { padding: 1.25rem; border: 1px solid rgba(100,108,255,0.08); border-radius: 14px; background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,250,250,0.92)); }
 .feature-title { margin: 0 0 0.25rem; font-size: 1.125rem; font-weight: 700; letter-spacing: -0.01em; }
 .feature-subtitle { margin: 0 0 0.25rem; font-size: 0.95rem; opacity: 0.9; }
-.feature-details { margin: 0; font-size: 0.95rem; opacity: 0.8; }
+.feature-details { margin: 0; font-size: 0.95rem; opacity: 0.85; }
 
 .how-section { padding: 2rem 1.25rem 2.5rem; max-width: 960px; margin: 0 auto; }
 .section-title { font-size: 1.75rem; margin: 0 0 1rem; }
