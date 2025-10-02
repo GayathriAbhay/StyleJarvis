@@ -90,20 +90,22 @@
 
 @media (prefers-reduced-motion: no-preference) { }
 
-/* Collage about section */
-.about-collage-section { padding: 3rem 1.5rem; background: linear-gradient(180deg, rgba(255,250,248,0.95), rgba(255,250,248,1)); border-top: 1px solid rgba(0,0,0,0.03); }
-.collage-container { display: grid; grid-template-columns: 1fr 520px; gap: 2rem; align-items: center; max-width: 1200px; margin: 0 auto; }
-.collage-left { padding: 1rem; }
-.collage-title { font-size: 1.75rem; margin: 0 0 0.5rem; font-weight: 800; }
-.collage-lead { color: var(--muted); margin: 0 0 1rem; }
-.collage-text { color: var(--muted); margin: 0 0 1rem; }
+/* About-features collage (abstract UI, no exact image) */
+.about-features-section { padding: 3rem 1.5rem; background: linear-gradient(180deg, rgba(255,250,248,0.95), rgba(255,250,248,1)); border-top: 1px solid rgba(0,0,0,0.03); }
+.about-features-grid { display: grid; grid-template-columns: 1fr 460px; gap: 2rem; align-items: start; max-width: 1200px; margin: 0 auto; }
+.collage-left, .about-left { padding: 1rem; }
+.collage-title, .collage-left .collage-title { font-size: 1.75rem; margin: 0 0 0.5rem; font-weight: 800; }
+.collage-lead, .collage-text { color: var(--muted); margin: 0 0 1rem; }
 .collage-cta { display: flex; gap: 0.6rem; }
 
-.collage-right { display: flex; align-items: center; justify-content: center; }
-.moodboard { width: 100%; max-width: 520px; background: #fff; border-radius: 12px; padding: 12px; box-shadow: 0 30px 80px rgba(10,10,10,0.12); position: relative; }
-.mood-image { width: 100%; height: 420px; object-fit: cover; display: block; border-radius: 8px; filter: saturate(0.98) contrast(1.02); }
-.mood-row { display: flex; gap: 8px; margin-top: 10px; }
-.mood-tile { flex: 1; min-height: 64px; background: linear-gradient(135deg,#faf7f5,#f2e9e5); border-radius: 6px; border: 1px solid rgba(0,0,0,0.03); }
-.mood-caption { font-size: 0.85rem; color: var(--muted); margin-top: 8px; }
+/* Abstract moodboard tiles */
+.about-right, .abstract-mood { display: flex; align-items: center; justify-content: center; }
+.abstract-mood { width: 100%; max-width: 420px; height: 420px; position: relative; }
+.abstract-mood .tile { position: absolute; border-radius: 8px; box-shadow: 0 18px 40px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.03); background-repeat: no-repeat; background-size: cover; background-position: center; }
+.tile-large { width: 320px; height: 280px; left: 40px; top: 30px; background: linear-gradient(180deg,#f7efe9,#efe4dc); transform: rotate(-6deg); }
+.tile-medium { width: 220px; height: 160px; right: 20px; top: 40px; background: linear-gradient(180deg,#efe9e4,#f7efe9); transform: rotate(6deg); }
+.tile-small { width: 120px; height: 140px; left: 60px; bottom: 20px; background: linear-gradient(180deg,#fff7f5,#fff2ef); transform: rotate(-3deg); }
+.tile-accent { width: 80px; height: 80px; right: 40px; bottom: 60px; background: linear-gradient(90deg,#ffd8d2,#ffecec); transform: rotate(12deg); }
+.mood-caption { position: absolute; left: 18px; bottom: 12px; font-size: 0.85rem; color: var(--muted); }
 
-@media (max-width: 980px) { .collage-container { grid-template-columns: 1fr; } .collage-right { order: -1; margin-bottom: 1rem; } }
+@media (max-width: 980px) { .about-features-grid { grid-template-columns: 1fr; } .abstract-mood { order: -1; margin-bottom: 1rem; } }
