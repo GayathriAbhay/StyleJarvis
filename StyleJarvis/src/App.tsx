@@ -56,8 +56,8 @@ function ProductCard({ product, index }: { product: { id: string; title: string;
 const SAMPLE_PRODUCTS = Array.from({ length: 6 }).map((_, i) => ({
   id: String(i + 1),
   title: ["Silk Slip", "Tailored Jumpsuit", "Draped Shirt", "Satin Midi", "Cropped Blazer", "Wide-leg Trouser"][i % 6],
-  price: ["$149", "$229", "$129", "$179", "$199", "$159"][i % 6],
-  image: PRODUCT_IMAGES[i % PRODUCT_IMAGES.length],
+  query: TREND_QUERIES[i % TREND_QUERIES.length],
+  image: FALLBACK_IMAGES[i % FALLBACK_IMAGES.length],
 }))
 
 export default function App() {
