@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 
-const HERO_IMG = "https://cdn.builder.io/api/v1/image/assets%2F233794be9a494c9b94dca09bc8bcba1f%2Fa617e92294834adcb78fb3430473511e?format=webp&width=1200"
+const HERO_IMG = "D:\Gayathri\StyleJarvis\StyleJarvis\src\assets\hero.jpg"
 
 const TREND_QUERIES = [
   'street style fashion',
