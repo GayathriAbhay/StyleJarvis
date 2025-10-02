@@ -190,7 +190,7 @@ export default function App() {
 
         <section className="products-section" id="collection">
           <div className="container">
-            <h2 className="section-heading">New Collection</h2>
+            <h2 className="section-heading">Latest Trends</h2>
             <p className="section-lead">A selection of timeless pieces curated to work together — elevated neutrals and considered silhouettes.</p>
 
             <div className="product-grid" role="list">
