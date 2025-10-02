@@ -2,17 +2,11 @@ import './App.css'
 
 const HERO_IMG = "https://cdn.builder.io/api/v1/image/assets%2F233794be9a494c9b94dca09bc8bcba1f%2Fa617e92294834adcb78fb3430473511e?format=webp&width=1200"
 
-const TREND_QUERIES = [
-  'street style fashion',
-  'runway editorial outfit',
-  'outfit flatlay',
-  'sustainable fashion outfit',
-  'vintage fashion look',
-  'minimal neutral outfit',
+const PRODUCT_IMAGES = [
+  "https://cdn.builder.io/api/v1/image/assets%2F233794be9a494c9b94dca09bc8bcba1f%2Fb410c7b8bc04461e8fdee8aec5a8aa41?format=webp&width=800",
+  "https://cdn.builder.io/api/v1/image/assets%2F233794be9a494c9b94dca09bc8bcba1f%2F651393529ba74e68bbfe8a8acc96933a?format=webp&width=800",
+  "https://cdn.builder.io/api/v1/image/assets%2F233794be9a494c9b94dca09bc8bcba1f%2F2dfa31133791434a8ca1b37fce598703?format=webp&width=800",
 ]
-
-// Use Unsplash source to show trending-style images (no API key).
-const PRODUCT_IMAGES = TREND_QUERIES.map(q => `https://source.unsplash.com/800x800/?${encodeURIComponent(q)}`)
 
 function Feature({ title, subtitle, details }: { title: string; subtitle: string; details: string }) {
   return (
