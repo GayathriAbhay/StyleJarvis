@@ -29,12 +29,10 @@ function ProductCard({ product }: { product: { id: string; title: string; price:
     <article className="product-card" aria-labelledby={"p-" + product.id}>
       <div className="product-media">
         <img className="product-image" src={product.image} alt={product.title} />
-        <div className="trend-badge">🔥 Trending</div>
       </div>
       <div className="product-meta">
         <h4 className="product-title" id={"p-" + product.id}>{product.title}</h4>
         <div className="product-row">
-          <div className="product-price">{product.price}</div>
           <button className="product-btn" aria-label={`Add ${product.title} to closet`}>Save</button>
         </div>
       </div>
