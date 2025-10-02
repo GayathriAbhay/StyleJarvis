@@ -49,7 +49,6 @@ export default function App() {
         <div className="brand-mark">StyleJarvis</div>
         <nav className="primary-nav" aria-label="Primary">
           <a className="nav-link" href="#about">About</a>
-          <a className="nav-link" href="#features">Features</a>
           <a className="nav-link" href="#collection">New Collection</a>
           <a className="nav-link" href="#how-it-works">How it works</a>
         </nav>
@@ -66,15 +65,6 @@ export default function App() {
             </div>
           </div>
 
-          <div className="hero-visual" aria-hidden>
-            <div className="hero-poster poster-with-image">
-              <img className="hero-poster-img" src={HERO_IMG} alt="Editorial fashion poster" />
-              <div className="poster-text poster-large">Style
-                <span className="poster-accent">Jarvis</span>
-              </div>
-              <div className="poster-overlay" />
-            </div>
-          </div>
         </section>
 
         <section className="about-section" id="about">
@@ -123,44 +113,74 @@ export default function App() {
           </div>
         </section>
 
-        <section className="features-grid" id="features">
-          <div className="polaroid-wrap" aria-hidden>
-            <div className="polaroid abstract">
-              <div className="abstract-frame" />
-              <div className="polaroid-tape" />
+        <section className="about-features-section" id="about">
+          <div className="container">
+            <h2 className="section-heading">About • Features</h2>
+            <p className="section-lead">We help you look fire every day — low effort, max impact. Meet your wardrobe's new BFF. Below are the core ways StyleJarvis helps you glow up.</p>
+
+            <div className="about-features-grid">
+              <div className="about-left">
+                <div className="genz-grid merged">
+                  <article className="genz-card">
+                    <div className="genz-emoji">📸</div>
+                    <div>
+                      <h3 className="genz-title">Virtual Closet — IRL ➜ Digital</h3>
+                      <p className="genz-desc">Snap fits or upload pics. Auto‑tagging (color, fabric, vibe). See your whole wardrobe in one swipe — never double‑buy again.</p>
+                    </div>
+                  </article>
+
+                  <article className="genz-card">
+                    <div className="genz-emoji">✨</div>
+                    <div>
+                      <h3 className="genz-title">Daily Fits, Curated</h3>
+                      <p className="genz-desc">Every AM we check your calendar + weather and drop 3–5 outfit combos using only your stuff. Fast, cute, and appropriate.</p>
+                    </div>
+                  </article>
+
+                  <article className="genz-card">
+                    <div className="genz-emoji">🛍️</div>
+                    <div>
+                      <h3 className="genz-title">Smart Shopping — No FOMO</h3>
+                      <p className="genz-desc">We analyze gaps and suggest 1–3 pieces that unlock the most fits — filtered by vibe and budget. Buy less, wear more.</p>
+                    </div>
+                  </article>
+
+                  <article className="genz-card">
+                    <div className="genz-emoji">🎨</div>
+                    <div>
+                      <h3 className="genz-title">Color & Fit, Optimized</h3>
+                      <p className="genz-desc">We match colors that pop on you and silhouettes that flex your features. Science + style = glow up.</p>
+                    </div>
+                  </article>
+
+                  <article className="genz-card">
+                    <div className="genz-emoji">🧳</div>
+                    <div>
+                      <h3 className="genz-title">Trip & Event Planner</h3>
+                      <p className="genz-desc">Input dates/destinations, and we pre‑pack outfit plans that match weather and dress code. Travel light, slay heavier.</p>
+                    </div>
+                  </article>
+
+                  <article className="genz-card">
+                    <div className="genz-emoji">💬</div>
+                    <div>
+                      <h3 className="genz-title">Feedback That Actually Learns</h3>
+                      <p className="genz-desc">Love it / Like it / Nah — rate fits and the AI levels up. The more you use it, the more it vibes with you.</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <aside className="about-right" aria-hidden>
+                <div className="abstract-mood">
+                  <div className="tile tile-large" />
+                  <div className="tile tile-medium" />
+                  <div className="tile tile-small" />
+                  <div className="tile tile-accent" />
+                </div>
+              </aside>
             </div>
           </div>
-
-          <Feature
-            title="The Virtual Closet Integrator"
-            subtitle="The digital twin of your wardrobe"
-            details="Upload photos of clothing, shoes, and accessories. Image recognition tags color, pattern, material, neckline, and more so you can see everything you own in one place."
-          />
-          <Feature
-            title="Personalized Daily Styling"
-            subtitle="Context-aware outfit suggestions"
-            details="Each morning, StyleJarvis checks your calendar, local weather, and style rating to recommend 3–5 complete looks from your closet."
-          />
-          <Feature
-            title="Smart Shopping & Gap Analysis"
-            subtitle="Buy only what unlocks more outfits"
-            details="We analyze usage patterns and detect gaps (e.g., plenty of shirts, missing versatile trousers) to suggest high-impact items filtered by your budget."
-          />
-          <Feature
-            title="Color Theory & Body Type Optimizer"
-            subtitle="Always flattering, by design"
-            details="Using your profile, StyleJarvis prioritizes colors that complement your skin tone and recommends silhouettes that suit your body shape."
-          />
-          <Feature
-            title="Outfit Planner & Event Prep"
-            subtitle="Plan looks for dates, trips, and events"
-            details="Enter destinations and dates. We pre-pack and plan outfits for the full event, checking forecasted weather and dress codes."
-          />
-          <Feature
-            title="Style Evolution Feedback Loop"
-            subtitle="It learns your taste"
-            details="Rate outfits (Love, Like, Not for me). Real‑time feedback sharpens future suggestions so the app improves the longer you use it."
-          />
         </section>
 
         <section className="products-section" id="collection">
