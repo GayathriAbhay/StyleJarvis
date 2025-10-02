@@ -60,6 +60,53 @@ const SAMPLE_PRODUCTS = Array.from({ length: 6 }).map((_, i) => ({
   image: FALLBACK_IMAGES[i % FALLBACK_IMAGES.length],
 }))
 
+function PinterestTrends() {
+  const [connected, setConnected] = useState<boolean>(() => {
+    try { return localStorage.getItem('pinterest_connected') === '1' } catch { return false }
+  })
+  const [loading, setLoading] = useState(false)
+
+  function openMCP() {
+    // guide user to open MCP popover to connect Pinterest
+    window.open('#open-mcp-popover', '_blank')
+  }
+
+  async function markConnected() {
+    setLoading(true)
+    try {
+      localStorage.setItem('pinterest_connected', '1')
+      setConnected(true)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  if (!connected) {
+    return (
+      <div className="pinterest-connect">
+        <p className="connect-lead">Connect your Pinterest account to see personalized, live trends pulled from your boards and followed creators.</p>
+        <div className="connect-actions">
+          <button className="cta-primary" onClick={openMCP}>Connect to Pinterest</button>
+          <button className="cta-outline" onClick={markConnected} disabled={loading}>{loading ? 'Connecting...' : "I've connected"}</button>
+        </div>
+        <p className="connect-note">Tip: Click "Connect to Pinterest" then use the MCP popover to authorize Pinterest. After authorization, come back and click "I've connected".</p>
+      </div>
+    )
+  }
+
+  // connected: show live trends (Unsplash fallback if Pinterest not available)
+  return (
+    <div>
+      <div className="product-grid" role="list">
+        {SAMPLE_PRODUCTS.map((p, i) => (
+          <ProductCard key={p.id} product={p} index={i} />
+        ))}
+      </div>
+      <p className="connect-note">Showing live trend images (simulated via Unsplash). To fetch actual Pinterest pins enable MCP connection.</p>
+    </div>
+  )
+}
+
 export default function App() {
   return (
     <div className="page-shell">
