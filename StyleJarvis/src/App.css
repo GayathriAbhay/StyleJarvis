@@ -19,23 +19,38 @@
 .cta-primary { background: #111; color: #fff; border-radius: 999px; padding: 0.8rem 1.2rem; border: 1px solid transparent; box-shadow: 0 6px 18px rgba(17,17,17,0.18); }
 .cta-secondary { background: transparent; color: #111; border-radius: 999px; padding: 0.8rem 1.2rem; border: 1px solid #646cff; }
 
-/* Hero visual */
+/* Hero visual - abstract poster inspired by fashion posters */
 .hero-visual { position: absolute; right: 2rem; top: 0; bottom: 0; width: 48%; display: flex; align-items: center; justify-content: center; pointer-events: none; z-index: 1; }
-.hero-image { width: 100%; max-width: 520px; border-radius: 20px; transform: translateY(6%); filter: contrast(1.02) saturate(1.05); box-shadow: 0 30px 80px rgba(16,16,16,0.35); }
-.hero-overlay { position: absolute; right: 2rem; top: 0; width: 48%; height: 100%; background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 60%); pointer-events: none; z-index: 2; mix-blend-mode: lighten; }
-.coming-badge { position: absolute; right: 3rem; bottom: 2.25rem; background: rgba(255,255,255,0.92); color: #b21b12; font-weight: 900; padding: 0.6rem 1rem; border-radius: 10px; transform: rotate(-2deg); box-shadow: 0 10px 30px rgba(0,0,0,0.15); z-index: 6; pointer-events: none; }
+.hero-poster { width: 420px; height: 560px; position: relative; border-radius: 14px; overflow: hidden; box-shadow: 0 40px 90px rgba(12,12,12,0.45); transform: rotate(-6deg); }
+.poster-shape { position: absolute; inset: 0; background: linear-gradient(180deg, #b21b12 0%, #8b0f0f 60%); clip-path: polygon(0 0, 100% 0, 100% 72%, 0 100%); }
+.poster-text { position: absolute; left: 18px; bottom: 36px; color: #fff; font-weight: 900; font-size: 4.2rem; line-height: 0.85; letter-spacing: -0.02em; text-transform: uppercase; }
+.poster-text br { display: inline; }
 
-/* Polaroid */
+.coming-badge { display: none; }
+
+/* Polaroid abstract */
 .polaroid-wrap { display: flex; align-items: start; justify-content: center; }
-.polaroid { width: 220px; margin: 0 1rem 1rem 0; background: #fff; padding: 12px; border-radius: 6px; box-shadow: 0 18px 40px rgba(0,0,0,0.15); transform: rotate(-2deg); }
-.polaroid img { width: 100%; display: block; border-radius: 4px; }
-.polaroid-tape { width: 60px; height: 14px; background: linear-gradient(90deg,#eee 0%, #ddd 100%); transform: translateY(-10px) rotate(-6deg); margin: -12px auto 6px; border-radius: 2px; }
+.polaroid { width: 220px; margin: 0 1rem 1rem 0; background: linear-gradient(180deg,#fff,#f6f6f6); padding: 14px; border-radius: 6px; box-shadow: 0 18px 40px rgba(0,0,0,0.12); transform: rotate(-4deg); display: grid; gap: 8px; }
+.abstract-frame { height: 160px; background: linear-gradient(135deg,#f5f0eb 0%, #ffeceb 30%, #fff3f0 100%); border-radius: 6px; box-shadow: inset 0 -6px 18px rgba(0,0,0,0.03); }
+.polaroid-tape { width: 60px; height: 14px; background: linear-gradient(90deg,#f2e6e2 0%, #e8d6d2 100%); transform: translateY(-10px) rotate(-6deg); margin: -8px auto 6px; border-radius: 2px; }
 
 .features-grid { display: grid; gap: 1rem; grid-template-columns: 220px repeat(auto-fit, minmax(260px, 1fr)); align-items: start; padding: 1.25rem; max-width: 1200px; margin: 0 auto; }
-.feature-card { padding: 1.25rem; border: 1px solid rgba(100,108,255,0.08); border-radius: 14px; background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,250,250,0.92)); }
+.feature-card { padding: 1.25rem; border: 1px solid rgba(0,0,0,0.06); border-radius: 14px; background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,249,247,0.98)); }
 .feature-title { margin: 0 0 0.25rem; font-size: 1.125rem; font-weight: 700; letter-spacing: -0.01em; }
 .feature-subtitle { margin: 0 0 0.25rem; font-size: 0.95rem; opacity: 0.9; }
 .feature-details { margin: 0; font-size: 0.95rem; opacity: 0.85; }
+
+/* Color palette helpers */
+:root { --accent-red: #b21b12; --accent-cream: #fff3ee; --accent-charcoal: #111216; }
+.hero-title { color: var(--accent-charcoal); }
+.hero-tagline { color: #333; }
+
+@media (max-width: 900px) {
+  .hero-visual { display: none; }
+  .features-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: no-preference) {}
 
 .how-section { padding: 2rem 1.25rem 2.5rem; max-width: 960px; margin: 0 auto; }
 .section-title { font-size: 1.75rem; margin: 0 0 1rem; }
