@@ -1,16 +1,15 @@
 import { useState } from 'react'
 import './App.css'
 
-const HERO_IMG = "D:\Gayathri\StyleJarvis\StyleJarvis\src\assets\hero.jpg"
-
-const TREND_QUERIES = [
-  'street style fashion',
-  'runway editorial outfit',
-  'outfit flatlay',
-  'sustainable fashion outfit',
-  'vintage fashion look',
-  'minimal neutral outfit',
-]
+import heroPoster from './assets/hero.jpg'
+import trend1 from './assets/1.jpg'
+import trend3 from './assets/3.jpg'
+import trend4 from './assets/4.jpg'
+import trend6 from './assets/6.jpg'
+import trend7 from './assets/7.jpg'
+import trend8 from './assets/8.jpg'
+import trend9 from './assets/9.jpg'
+import trend5 from './assets/5.png'
 
 const FALLBACK_IMAGES = [
   "https://cdn.builder.io/api/v1/image/assets%2F233794be9a494c9b94dca09bc8bcba1f%2Fb410c7b8bc04461e8fdee8aec5a8aa41?format=webp&width=800",
@@ -28,18 +27,15 @@ function Feature({ title, subtitle, details }: { title: string; subtitle: string
   )
 }
 
-function ProductCard({ product, index }: { product: { id: string; title: string; query?: string; image?: string }, index: number }) {
-  const unsplashUrl = product.query
-    ? `https://source.unsplash.com/800x800/?${encodeURIComponent(product.query)}`
-    : undefined
-
-  const fallback = product.image || FALLBACK_IMAGES[index % FALLBACK_IMAGES.length]
-  const [src, setSrc] = useState(unsplashUrl || fallback)
+function ProductCard({ product, index }: { product: { id: string; title: string; image?: string }, index: number }) {
+  const primary = product.image || FALLBACK_IMAGES[index % FALLBACK_IMAGES.length]
+  const [src, setSrc] = useState(primary)
 
   return (
     <article className="product-card" aria-labelledby={"p-" + product.id}>
       <div className="product-media">
         <img className="product-image" src={src} alt={product.title} loading="lazy" onError={() => {
+          const fallback = FALLBACK_IMAGES[index % FALLBACK_IMAGES.length]
           if (src !== fallback) setSrc(fallback)
         }} />
       </div>
@@ -53,56 +49,25 @@ function ProductCard({ product, index }: { product: { id: string; title: string;
   )
 }
 
-const SAMPLE_PRODUCTS = Array.from({ length: 6 }).map((_, i) => ({
-  id: String(i + 1),
-  title: ["Silk Slip", "Tailored Jumpsuit", "Draped Shirt", "Satin Midi", "Cropped Blazer", "Wide-leg Trouser"][i % 6],
-  query: TREND_QUERIES[i % TREND_QUERIES.length],
-  image: FALLBACK_IMAGES[i % FALLBACK_IMAGES.length],
-}))
+const LOCAL_TREND_PRODUCTS = [
+  { id: 't1', title: 'Street Style Edit', image: trend1 },
+  { id: 't2', title: 'Minimal Monochrome', image: trend3 },
+  { id: 't3', title: 'Runway Ready', image: trend4 },
+  { id: 't4', title: 'Weekend Layers', image: trend6 },
+  { id: 't5', title: 'Bold & Bright', image: trend7 },
+  { id: 't6', title: 'Cafe Casual', image: trend8 },
+  { id: 't7', title: 'City Essentials', image: trend9 },
+  { id: 't8', title: 'Soft Neutrals', image: trend5 },
+]
 
 function PinterestTrends() {
-  const [connected, setConnected] = useState<boolean>(() => {
-    try { return localStorage.getItem('pinterest_connected') === '1' } catch { return false }
-  })
-  const [loading, setLoading] = useState(false)
-
-  function openMCP() {
-    // guide user to open MCP popover to connect Pinterest
-    window.open('#open-mcp-popover', '_blank')
-  }
-
-  async function markConnected() {
-    setLoading(true)
-    try {
-      localStorage.setItem('pinterest_connected', '1')
-      setConnected(true)
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  if (!connected) {
-    return (
-      <div className="pinterest-connect">
-        <p className="connect-lead">Connect your Pinterest account to see personalized, live trends pulled from your boards and followed creators.</p>
-        <div className="connect-actions">
-          <button className="cta-primary" onClick={openMCP}>Connect to Pinterest</button>
-          <button className="cta-outline" onClick={markConnected} disabled={loading}>{loading ? 'Connecting...' : "I've connected"}</button>
-        </div>
-        <p className="connect-note">Tip: Click "Connect to Pinterest" then use the MCP popover to authorize Pinterest. After authorization, come back and click "I've connected".</p>
-      </div>
-    )
-  }
-
-  // connected: show live trends (Unsplash fallback if Pinterest not available)
   return (
     <div>
       <div className="product-grid" role="list">
-        {SAMPLE_PRODUCTS.map((p, i) => (
+        {LOCAL_TREND_PRODUCTS.map((p, i) => (
           <ProductCard key={p.id} product={p} index={i} />
         ))}
       </div>
-      <p className="connect-note">Showing live trend images (simulated via Unsplash). To fetch actual Pinterest pins enable MCP connection.</p>
     </div>
   )
 }
@@ -130,6 +95,12 @@ export default function App() {
             </div>
           </div>
 
+          <div className="hero-visual" aria-hidden>
+            <div className="hero-poster">
+              <img className="hero-poster-img" src={heroPoster} alt="Editorial fashion portrait" />
+              <div className="poster-overlay" />
+            </div>
+          </div>
         </section>
 
         <section className="about-section" id="about">
@@ -251,7 +222,7 @@ export default function App() {
         <section className="products-section" id="collection">
           <div className="container">
             <h2 className="section-heading">Latest Trends</h2>
-            <p className="section-lead">Live, trending fashion pulled from your Pinterest when connected. Connect to see a real-time feed of pins tailored to current trends.</p>
+            <p className="section-lead">Live, trending fashion from your library. Explore the latest looks and save your favorites.</p>
 
             <PinterestTrends />
           </div>
