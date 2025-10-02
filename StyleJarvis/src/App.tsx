@@ -48,6 +48,7 @@ export default function App() {
       <header className="site-header">
         <div className="brand-mark">StyleJarvis</div>
         <nav className="primary-nav" aria-label="Primary">
+          <a className="nav-link" href="#about">About</a>
           <a className="nav-link" href="#features">Features</a>
           <a className="nav-link" href="#collection">New Collection</a>
           <a className="nav-link" href="#how-it-works">How it works</a>
