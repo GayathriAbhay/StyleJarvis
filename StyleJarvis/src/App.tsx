@@ -207,8 +207,8 @@ export default function App() {
             <p className="section-lead">A selection of timeless pieces curated to work together — elevated neutrals and considered silhouettes.</p>
 
             <div className="product-grid" role="list">
-              {SAMPLE_PRODUCTS.map((p) => (
-                <ProductCard key={p.id} product={p} />
+              {SAMPLE_PRODUCTS.map((p, i) => (
+                <ProductCard key={p.id} product={p} index={i} />
               ))}
             </div>
           </div>
