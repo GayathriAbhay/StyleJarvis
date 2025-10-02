@@ -28,11 +28,20 @@ function Feature({ title, subtitle, details }: { title: string; subtitle: string
   )
 }
 
-function ProductCard({ product }: { product: { id: string; title: string; price: string; image: string } }) {
+function ProductCard({ product, index }: { product: { id: string; title: string; query?: string; image?: string }, index: number }) {
+  const unsplashUrl = product.query
+    ? `https://source.unsplash.com/800x800/?${encodeURIComponent(product.query)}`
+    : undefined
+
+  const fallback = product.image || FALLBACK_IMAGES[index % FALLBACK_IMAGES.length]
+  const [src, setSrc] = useState(unsplashUrl || fallback)
+
   return (
     <article className="product-card" aria-labelledby={"p-" + product.id}>
       <div className="product-media">
-        <img className="product-image" src={product.image} alt={product.title} />
+        <img className="product-image" src={src} alt={product.title} loading="lazy" onError={() => {
+          if (src !== fallback) setSrc(fallback)
+        }} />
       </div>
       <div className="product-meta">
         <h4 className="product-title" id={"p-" + product.id}>{product.title}</h4>
