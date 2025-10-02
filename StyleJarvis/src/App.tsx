@@ -1,5 +1,8 @@
 import './App.css'
 
+const HERO_IMG = "https://cdn.builder.io/api/v1/image/assets%2F233794be9a494c9b94dca09bc8bcba1f%2F2dfa31133791434a8ca1b37fce598703?format=webp&width=800"
+const POLAROID_IMG = "https://cdn.builder.io/api/v1/image/assets%2F233794be9a494c9b94dca09bc8bcba1f%2F651393529ba74e68bbfe8a8acc96933a?format=webp&width=800"
+
 function Feature({ title, subtitle, details }: { title: string; subtitle: string; details: string }) {
   return (
     <section className="feature-card" aria-labelledby={title.replace(/\s+/g, '-').toLowerCase()}>
@@ -32,9 +35,22 @@ export default function App() {
               <button className="cta-secondary" type="button">Try Daily Styling</button>
             </div>
           </div>
+
+          <div className="hero-visual" aria-hidden>
+            <img src={HERO_IMG} className="hero-image" alt="Fashion model shoes" />
+            <div className="hero-overlay" />
+            <div className="coming-badge">GRAND OPENING</div>
+          </div>
         </section>
 
         <section className="features-grid" id="features">
+          <div className="polaroid-wrap" aria-hidden>
+            <div className="polaroid">
+              <img src={POLAROID_IMG} alt="Polaroid style fashion" />
+              <div className="polaroid-tape" />
+            </div>
+          </div>
+
           <Feature
             title="The Virtual Closet Integrator"
             subtitle="The digital twin of your wardrobe"
