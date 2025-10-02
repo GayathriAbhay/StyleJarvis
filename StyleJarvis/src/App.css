@@ -1,42 +1,37 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0;
+  text-align: left;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+.page-shell { display: grid; min-height: 100dvh; grid-template-rows: auto 1fr auto; }
+.site-header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; position: sticky; top: 0; backdrop-filter: blur(6px); }
+.brand-mark { font-weight: 800; letter-spacing: -0.02em; font-size: 1.25rem; }
+.primary-nav { display: flex; gap: 1rem; }
+.nav-link { color: #646cff; }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.hero-section { padding: 4rem 1.25rem 3rem; }
+.hero-content { max-width: 960px; margin: 0 auto; }
+.hero-title { font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 0.5rem; }
+.hero-tagline { font-size: 1.125rem; opacity: 0.86; margin: 0 0 1.25rem; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.cta-primary { background: #1a1a1a; color: #ffffff; border-radius: 999px; padding: 0.8rem 1.2rem; border: 1px solid transparent; }
+.cta-secondary { background: transparent; color: currentColor; border-radius: 999px; padding: 0.8rem 1.2rem; border: 1px solid #646cff; }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
+.features-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); padding: 1.25rem; max-width: 1200px; margin: 0 auto; }
+.feature-card { padding: 1.25rem; border: 1px solid rgba(100,108,255,0.18); border-radius: 14px; background: rgba(0,0,0,0.02); }
+.feature-title { margin: 0 0 0.25rem; font-size: 1.125rem; font-weight: 700; letter-spacing: -0.01em; }
+.feature-subtitle { margin: 0 0 0.25rem; font-size: 0.95rem; opacity: 0.9; }
+.feature-details { margin: 0; font-size: 0.95rem; opacity: 0.8; }
 
-.card {
-  padding: 2em;
-}
+.how-section { padding: 2rem 1.25rem 2.5rem; max-width: 960px; margin: 0 auto; }
+.section-title { font-size: 1.75rem; margin: 0 0 1rem; }
+.steps-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.75rem; }
+.step-item { display: grid; grid-template-columns: auto 1fr; gap: 0.75rem; align-items: start; }
+.step-badge { width: 28px; height: 28px; border-radius: 50%; background: #646cff; color: #ffffff; display: grid; place-items: center; font-weight: 700; }
 
-.read-the-docs {
-  color: #888;
-}
+.site-footer { padding: 1.25rem; border-top: 1px solid rgba(100,108,255,0.18); }
+.footer-note { margin: 0; opacity: 0.8; }
+
+@media (prefers-reduced-motion: no-preference) {}
