@@ -125,7 +125,7 @@ export default function App() {
                     <div className="genz-emoji">📸</div>
                     <div>
                       <h3 className="genz-title">Virtual Closet — IRL ➜ Digital</h3>
-                      <p className="genz-desc">Snap fits or upload pics. Auto‑tagging (color, fabric, vibe). See your whole wardrobe in one swipe — never double‑buy again.</p>
+                      <p className="genz-desc">Snap fits or upload pics. Auto‑tagging (color, fabric, vibe). See your whole wardrobe in one swipe — never double���buy again.</p>
                     </div>
                   </article>
 
@@ -214,7 +214,7 @@ export default function App() {
           </div>
           <div className="footer-actions">
             <a className="nav-link" href="#get-started">Get started</a>
-            <a className="nav-link" href="#features">Features</a>
+            <a className="nav-link" href="#about">About</a>
           </div>
         </div>
       </footer>
