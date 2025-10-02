@@ -206,32 +206,6 @@ export default function App() {
         </section>
       </main>
 
-        <section className="about-collage-section" id="about">
-          <div className="container collage-container">
-            <div className="collage-left">
-              <h2 className="collage-title">The Tale • Our Vibe</h2>
-              <p className="collage-lead">We cut, paste, and remix your closet into an editorial moodboard. Think collage energy — playful, raw, and unfiltered.</p>
-              <p className="collage-text">StyleJarvis is where your fits meet AI: auto‑tagging, outfit drops, and curated buys that actually change how you dress. For the people who want to look iconic but don't have time to think about it.</p>
-              <div className="collage-cta">
-                <button className="cta-primary">Make my closet</button>
-                <button className="cta-outline">See how it works</button>
-              </div>
-            </div>
-
-            <div className="collage-right" aria-hidden>
-              <div className="moodboard">
-                <img src="https://cdn.builder.io/api/v1/image/assets%2F233794be9a494c9b94dca09bc8bcba1f%2F69cc71192bbd4badacf2356d51adac90?format=webp&width=1200" alt="moodboard" className="mood-image" />
-                <div className="mood-row">
-                  <div className="mood-tile" />
-                  <div className="mood-tile" />
-                  <div className="mood-tile" />
-                </div>
-                <div className="mood-caption">Collage: texture, print studies, and cutouts — the DNA of our looks.</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
       <footer className="site-footer">
         <div className="container footer-grid">
           <div>
